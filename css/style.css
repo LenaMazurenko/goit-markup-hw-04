@@ -10,6 +10,7 @@
     /*--blue-text-color: var(--hover-bg-color);*/
     --black-text-color: #000000;
     --contacts-header-text-color: rgba(255, 255, 255, 0.6);
+    --icon-no-activ: #AFB1B8;
 }
 body {
     margin: 0;
@@ -20,6 +21,7 @@ body {
     color: var(--main-text-color);
     background-color: var(--main-bg-color);
 }
+
 /*utilits*/
 .list {
     list-style: none;
@@ -44,17 +46,25 @@ p {
     padding-top: 94px;
     padding-bottom: 94px;
 }
+/*hidden title*/
 .unused-title {
-    color: var(--main-bg-color);
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
 }
+
 img {
     display: block;
     max-width: 100%;
     height: auto;
 }
+
 a {
     display: block;
 }
+
 /*---------------------HEADER-------------------------*/
 .header-wrapper {
     display: flex;
@@ -62,11 +72,13 @@ a {
     height: 80px;
     border-bottom: 1px solid #ececec;
 }
+
 /* ------navbar*/
 .navbar {
     display: flex;
     align-items: center;
 }
+
 /*------logo*/
 .logo {
     display: block;
@@ -106,17 +118,21 @@ a {
 .nav-in-header-element > a:focus {
     color: var(--active-color);
 }
+.nav-in-header-element .current {
+    color: var(--active-color);
+}
 
 /*-------Contacts in Header*/
 .contact-in-header {
     display: flex;
     margin-left: auto;
 }
-.contact-in-header-element:not(:last-child) {
+.contact-in-header li:not(:last-child) {
     margin-right: 50px;
 }
-.contact-in-header-element > a {
-    display: block;
+.contact-in-header-element {
+    display: flex;
+    align-items: center;
     padding-top: 32px;
     padding-bottom: 32px;
 
@@ -126,17 +142,18 @@ a {
     color: var(--secondary-text-color);
     text-decoration: none;
 }
+/*icon in header*/
 .icon-contacts {
-    fill: var(--secondary-text-color);
-}
-.contact-in-header-element a:hover,
-.contact-in-header-element a:focus {
-    color: var(--active-color);
-    fill: #2196f3;
+    fill: currentColor;
+    margin-right: 10px;
 }
 
-.nav-in-header-element .current {
+.contact-in-header-element:hover,
+.contact-in-header-element:focus,
+.contact-in-header-element:hover .icon-contacts,
+.contact-in-header-element:focus .icon-contacts {
     color: var(--active-color);
+    fill: var(--active-color);
 }
 
 /*-----------main_HomePage.html-------------*/
@@ -148,7 +165,7 @@ a {
     text-align: center;
     margin: 0 auto;
 
-    /*background-color: var(--dark-bg-color);*/
+    background-color: var(--dark-bg-color);
     background-image: linear-gradient(
             to right,
             rgba(47, 48, 58, 0.4),
@@ -200,7 +217,13 @@ a {
 .homepage-advantages-list-item:not(:last-child) {
     margin-right: 30px;
 }
-
+.block-icon-advantages{
+    background-color: var(--button-bg-color);
+    width: 270px;
+    height: 120px;
+    padding: 25px 100px;
+    margin-bottom: 30px;
+}
 .homepage-advantages-element-title {
     margin-bottom: 10px;
 
@@ -270,8 +293,7 @@ a {
     margin-right: 30px;
 }
 .block-title-team {
-    margin-bottom: 30px;
-    margin-top: 30px;
+      margin-top: 30px;
 }
 .homepage-surname-title {
     margin-bottom: 10px;
@@ -290,7 +312,29 @@ a {
     letter-spacing: 0.03em;
     color: var(--secondary-text-color);
 }
+.block-social-links{
+display: flex;
+margin-bottom: 30px;
+margin: 16px 32px 30px 32px ;
+justify-content: space-between;
+align-items: center;
+}
 
+.social-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+  }
+.icon-social-link{
+    fill: var(--icon-no-activ);
+}
+.social-link:hover, .social-link:hover .icon-social-link {
+    background-color: var(--active-color);
+    fill: #fff;
+}
 /*---------------------main Portfolio.html--------------------*/
 /*-----list Filter*/
 .list-filter {
