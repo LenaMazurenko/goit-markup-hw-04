@@ -10,7 +10,7 @@
     /*--blue-text-color: var(--hover-bg-color);*/
     --black-text-color: #000000;
     --contacts-header-text-color: rgba(255, 255, 255, 0.6);
-    --icon-no-activ: #AFB1B8;
+    --icon-no-activ: #afb1b8;
 }
 body {
     margin: 0;
@@ -65,6 +65,22 @@ a {
     display: block;
 }
 
+.block-social-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 206px;
+    height: 44px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
 /*---------------------HEADER-------------------------*/
 .header-wrapper {
     display: flex;
@@ -217,7 +233,7 @@ a {
 .homepage-advantages-list-item:not(:last-child) {
     margin-right: 30px;
 }
-.block-icon-advantages{
+.block-icon-advantages {
     background-color: var(--button-bg-color);
     width: 270px;
     height: 120px;
@@ -293,7 +309,7 @@ a {
     margin-right: 30px;
 }
 .block-title-team {
-      margin-top: 30px;
+    margin-top: 30px;
 }
 .homepage-surname-title {
     margin-bottom: 10px;
@@ -312,28 +328,55 @@ a {
     letter-spacing: 0.03em;
     color: var(--secondary-text-color);
 }
-.block-social-links{
-display: flex;
-margin-bottom: 30px;
-margin: 16px 32px 30px 32px ;
-justify-content: space-between;
-align-items: center;
+.homepage-team-block .block-social-links {
+    margin: 16px 32px 30px 32px;
 }
 
-.social-link{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-  }
-.icon-social-link{
+.homepage-team-block .social-link {
+    background-color: var(--main-bg-color);
+}
+.homepage-team-block .icon-social-link {
     fill: var(--icon-no-activ);
 }
-.social-link:hover, .social-link:hover .icon-social-link {
+.homepage-team-block .social-link:hover,
+.homepage-team-block .social-link:hover .icon-social-link {
     background-color: var(--active-color);
     fill: #fff;
+}
+
+/*---------block Clients*/
+.homepage-clients-title {
+    margin: 0 auto 50px;
+
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 1.17;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--main-text-color);
+}
+.homepage-clients-block {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.link-client {
+    display: flex;
+    width: 170px;
+    height: 92px;
+    border: 1px solid var(--icon-no-activ);
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    fill: var(--icon-no-activ);
+    cursor: pointer;
+}
+
+.link-client:hover,
+.link-client:focus {
+    border: 1px solid var(--active-color);
+    fill: var(--active-color);
 }
 /*---------------------main Portfolio.html--------------------*/
 /*-----list Filter*/
@@ -373,6 +416,7 @@ align-items: center;
 }
 .list-portfolio-item {
     width: 370px;
+    cursor: pointer;
 }
 .list-portfolio-item:not(:nth-child(3n)) {
     margin-right: 30px;
@@ -380,6 +424,14 @@ align-items: center;
 .list-portfolio-item:not(:nth-last-child(-n + 3)) {
     margin-bottom: 30px;
 }
+.list-portfolio-item:hover,
+.list-portfolio-item:focus {
+    background: var(--main-bg-color);
+    border: 1px solid #eeeeee;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+        1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .list-portfolio-block-link {
     text-decoration: none;
     font-style: normal;
@@ -407,10 +459,16 @@ align-items: center;
 .footer {
     max-width: 1600px;
     margin: 0 auto;
-    padding-top: 60px;
-    padding-bottom: 60px;
 
     background: var(--dark-bg-color);
+}
+.flex-container {
+    display: flex;
+}
+.contacts-block-in-footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-right: 70px;
 }
 .footer .logo {
     margin-bottom: 20px;
@@ -437,4 +495,28 @@ align-items: center;
 }
 .address-list-in-footer li:not(:last-child) {
     margin-bottom: 9px;
+}
+.join-block-in-footer {
+    padding-top: 72px;
+    padding-bottom: 100px;
+}
+.join-block-in-footer h2 {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: var(--white-text-color);
+}
+.join-block-in-footer .block-social-links {
+    margin-top: 20px;
+}
+.join-block-in-footer .social-link {
+    background-color: rgba(255, 255, 255, 0.1);
+    fill: var(--white-text-color);
+}
+.join-block-in-footer .social-link:hover,
+.join-block-in-footer .social-link:focus {
+    background-color: var(--active-color);
 }
