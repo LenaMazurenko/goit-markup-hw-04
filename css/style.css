@@ -188,7 +188,7 @@ a {
             rgba(47, 48, 58, 0.4)
         ),
         url("../images/hero_img.jpg");
-    background-size: contain;
+    background-size: cover;
 }
 
 .homepage-main-title {
@@ -234,11 +234,15 @@ a {
     margin-right: 30px;
 }
 .block-icon-advantages {
-    background-color: var(--button-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 270px;
     height: 120px;
-    padding: 25px 100px;
     margin-bottom: 30px;
+
+    background-color: var(--button-bg-color);
+    border-radius: 4px;
 }
 .homepage-advantages-element-title {
     margin-bottom: 10px;
@@ -355,7 +359,7 @@ a {
     letter-spacing: 0.03em;
     color: var(--main-text-color);
 }
-.homepage-clients-block {
+.homepage-clients-list {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -427,10 +431,11 @@ a {
 .list-portfolio-item:not(:nth-last-child(-n + 3)) {
     margin-bottom: 30px;
 }
-.list-portfolio-item:hover,
-.list-portfolio-item:focus {
+.list-portfolio-block-link:hover,
+.list-portfolio-block-link:focus {
     background: var(--main-bg-color);
     border: 1px solid #eeeeee;
+    border-top: none;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
         1px 4px 6px rgba(0, 0, 0, 0.16);
 }
