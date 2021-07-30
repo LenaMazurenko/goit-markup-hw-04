@@ -343,7 +343,9 @@ a {
     fill: var(--icon-no-activ);
 }
 .homepage-team-block .social-link:hover,
-.homepage-team-block .social-link:hover .icon-social-link {
+.homepage-team-block .social-link:hover .icon-social-link,
+.homepage-team-block .social-link:focus,
+.homepage-team-block .social-link:focus .icon-social-link {
     background-color: var(--active-color);
     fill: #fff;
 }
